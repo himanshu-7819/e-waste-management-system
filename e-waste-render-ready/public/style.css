@@ -1,0 +1,23 @@
+:root{
+  --bg:#f7fafc; --card:#fff; --primary:#0b69ff; --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:#0f172a}
+.top{background:linear-gradient(90deg,var(--primary),#0f4bd8);color:white;padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:800}
+nav a{color:rgba(255,255,255,0.95);margin-left:12px;text-decoration:none}
+.container{max-width:1000px;margin:18px auto;padding:12px}
+.card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 8px 24px rgba(12,14,20,0.06);margin-bottom:12px}
+.hidden{display:none}
+.lead{color:var(--muted)}
+.btn{background:var(--primary);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+.ghost{background:transparent;border:1px solid #dbeafe;color:#0b69ff}
+.small{font-size:13px;color:var(--muted)}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e7eb;margin-top:6px}
+footer.foot{text-align:center;padding:14px;color:var(--muted)}
+.kv{display:flex;gap:8px;align-items:center}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px;border-bottom:1px solid #eef2f7;text-align:left}
+.status{padding:6px 8px;border-radius:8px;font-weight:700}
+.status.pending{background:#fff7ed;color:#b45309}
+.status.collected{background:#ecfdf5;color:#065f46}

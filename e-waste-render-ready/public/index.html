@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Waste Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">E-Waste Management</div>
+    <nav>
+      <a href="#" id="lnHome">Home</a>
+      <a href="#" id="lnCollection">Collection</a>
+      <a href="#" id="lnDashboard">Dashboard</a>
+      <a href="#" id="lnAdmin" class="hidden">Admin</a>
+      <span id="authLinks">
+        <button id="btnLogin" class="btn small">Login</button>
+        <button id="btnSignup" class="btn small ghost">Signup</button>
+      </span>
+      <span id="userArea" class="hidden small"></span>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="home" class="card">
+      <h1>E-Waste Management System</h1>
+      <p class="lead">Demo project for college. Signup/login and request e-waste pickup. Admin can manage requests.</p>
+      <div class="hero-actions">
+        <button class="btn" onclick="showSection('collection')">Request Pickup</button>
+        <button class="btn ghost" onclick="showSection('about')">About</button>
+      </div>
+    </section>
+
+    <section id="about" class="card hidden">
+      <h2>About</h2>
+      <p>This project uses a Node.js backend and SQLite database. Admin: admin@example.com / admin123</p>
+    </section>
+
+    <section id="collection" class="card hidden">
+      <h2>Collection Request</h2>
+      <form id="reqForm">
+        <label>Item Type</label>
+        <select id="itemType" required>
+          <option value="">--Select--</option>
+          <option>Mobile Phone</option>
+          <option>Laptop</option>
+          <option>Battery</option>
+          <option>Printer</option>
+          <option>Motherboard</option>
+          <option>Other</option>
+        </select>
+        <label>Quantity</label>
+        <input id="quantity" type="number" min="1" value="1" required />
+        <label>Preferred Date</label>
+        <input id="preferredDate" type="date" required />
+        <label>Address</label>
+        <textarea id="address" rows="3" required></textarea>
+        <label>Phone</label>
+        <input id="phone" required />
+        <div style="text-align:right; margin-top:8px">
+          <button class="btn" type="submit">Submit Request</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="dashboard" class="card hidden">
+      <h2 id="dashTitle">Dashboard</h2>
+      <div id="dashContent"></div>
+    </section>
+
+    <section id="loginModal" class="card hidden">
+      <h3>Login</h3>
+      <label>Email</label>
+      <input id="loginEmail" />
+      <label>Password</label>
+      <input id="loginPass" type="password" />
+      <div style="text-align:right; margin-top:8px">
+        <button id="loginBtn" class="btn">Login</button>
+        <button class="btn ghost" onclick="hideLogin()">Cancel</button>
+      </div>
+    </section>
+
+    <section id="signupModal" class="card hidden">
+      <h3>Signup</h3>
+      <label>Name</label>
+      <input id="suName" />
+      <label>Email</label>
+      <input id="suEmail" />
+      <label>Password</label>
+      <input id="suPass" type="password" />
+      <div style="text-align:right; margin-top:8px">
+        <button id="signupBtn" class="btn">Create</button>
+        <button class="btn ghost" onclick="hideSignup()">Cancel</button>
+      </div>
+    </section>
+
+    <section id="adminPanel" class="card hidden">
+      <h3>Admin Panel</h3>
+      <div id="adminControls"></div>
+    </section>
+
+  </main>
+
+  <footer class="foot">Show this while demo. Deployed with SQLite on Render.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
